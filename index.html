@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reni.dev | Portafolio</title>
+    <!-- Tailwind CSS por CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración de Tailwind con la paleta de colores solicitada
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        palette: {
+                            darkest: '#5C5C52',
+                            dark: '#8B8B7A',
+                            medium: '#A8A898',
+                            light: '#C4C4B8',
+                            lightest: '#E0E0D4',
+                            white: '#FBFBF9', // Un blanco roto muy sutil para dar calidez
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Stack Sans Text"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        notch: ['"Stack Sans Notch"', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap');
+
+        /* Pequeño ajuste para suavizar el scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Ocultar barra de desplazamiento para listas limpias pero permitir scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Animación sutil para el fondo */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .bg-animated-gradient {
+            background: linear-gradient(-45deg, #E0E0D4, #C4C4B8, #A8A898, #E0E0D4);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+    </style>
+</head>
+<body class="bg-animated-gradient text-palette-darkest min-h-screen flex items-center justify-center p-4 md:p-8 selection:bg-palette-medium selection:text-white relative overflow-x-hidden">
+
+    <!-- Formas decorativas desenfocadas de fondo para resaltar el glassmorfismo -->
+    <div class="fixed top-[-10%] left-[-10%] w-96 h-96 bg-palette-white rounded-full mix-blend-overlay filter blur-[100px] opacity-70 pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-96 h-96 bg-palette-dark rounded-full mix-blend-overlay filter blur-[100px] opacity-40 pointer-events-none"></div>
+
+    <!-- Contenedor Principal (Grid Bento) -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-auto relative z-10">
+
+        <!-- Clase base para el efecto cristal (Glass) -->
+        <!-- bg-white/40 (blanco semi-transparente), backdrop-blur-xl (desenfoque fuerte), border-white/50 (borde sutil) -->
+        
+        <!-- 1. Acerca de mi -->
+        <article class="col-span-1 md:col-span-2 md:row-span-2 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[2rem] p-8 md:p-10 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] flex flex-col justify-center transition-transform duration-300 hover:-translate-y-1">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                <!-- Imagen -->
+                <div class="flex-shrink-0">
+                    <!-- Marco de imagen adaptado al glassmorfismo -->
+                    <img src="/images/Y.jpeg" alt="Reni" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg border-4 border-white/50">
+                </div>
+                <!-- Texto -->
+                <div class="text-center sm:text-left">
+                    <div class="inline-block bg-white/60 backdrop-blur-md border border-white/40 text-palette-darkest px-3 py-1 rounded-full text-sm font-medium mb-3 shadow-sm">
+                        Desarrollador Fullstack
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight font-notch">Hola, soy Reni.dev 👋</h1>
+                    <p class="text-palette-darkest/80 leading-relaxed">
+                        <b> Ingeniero Informático </b> con 6 años de experiencia en desarrollo fullstack | Servicios de Desarrollo Web y Sistemas automatizados | Diseño de Interfaz y Experiencia de Usuario  (UI/UX) | e-commerce | Sistemas de registro y control, almacenamiento y cálculos de datos | Flask (Python), Laravel (PHP), Angular (Typescript). Aprendiendo Flutter 🔷
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- 2. Páginas que he creado -->
+        <article class="col-span-1 md:col-span-1 md:row-span-2 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[2rem] p-6 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] flex flex-col transition-transform duration-300 hover:-translate-y-1 text-palette-darkest">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2 font-notch">
+                🌐 Páginas creadas
+            </h2>
+            <div id="created-pages" class="flex flex-col gap-2 overflow-y-auto no-scrollbar flex-grow max-h-[300px]">
+                <!-- Inyectado por JS -->
+            </div>
+        </article>
+
+        <!-- 3. Páginas que mantengo/administro -->
+        <article class="col-span-1 md:col-span-1 md:row-span-2 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[2rem] p-6 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] flex flex-col transition-transform duration-300 hover:-translate-y-1">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2 font-notch">
+                🛠️ En mantenimiento
+            </h2>
+            <p class="text-sm text-palette-darkest/70 mb-4">Proyectos que actualmente atiendo y optimizo.</p>
+            <div id="maintained-pages" class="flex flex-col gap-2 overflow-y-auto no-scrollbar flex-grow max-h-[250px]">
+                <!-- Inyectado por JS -->
+            </div>
+        </article>
+
+        <!-- 4. Apps que he creado -->
+        <!-- Nota: He mantenido un fondo ligeramente más oscuro aquí para diferenciarlo, pero sigue siendo cristalino -->
+        <article class="col-span-1 md:col-span-2 bg-palette-medium/30 backdrop-blur-xl border border-white/40 text-palette-darkest rounded-[2rem] p-6 md:p-8 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] flex flex-col justify-center transition-transform duration-300 hover:-translate-y-1">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2 font-notch">
+                📱 Apps desarrolladas
+            </h2>
+            <div id="apps-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3 overflow-y-auto no-scrollbar max-h-48 pr-2">
+                <!-- Inyectado por JS -->
+            </div>
+        </article>
+
+        <!-- 5. Blog -->
+        <article class="col-span-1 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[2rem] p-6 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] flex flex-col justify-center transition-transform duration-300 hover:-translate-y-1">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2 font-notch">
+                📝 Blog
+            </h2>
+            <div id="blog-list" class="flex flex-col gap-3 overflow-y-auto no-scrollbar max-h-48">
+                <!-- Inyectado por JS -->
+            </div>
+        </article>
+
+        <!-- 6. Contacto -->
+        <article class="col-span-1 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[2rem] p-6 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] flex flex-col items-center justify-center text-center transition-transform duration-300 hover:-translate-y-1">
+            <h2 class="text-xl font-bold mb-4 text-palette-darkest font-notch">Contacto</h2>
+            <div class="flex gap-4">
+                <!-- Botones sociales también con efecto cristal -->
+                <a href="https://www.linkedin.com/in/renier-márquez-a34210a9/" target="_blank" rel="noopener noreferrer" 
+                   class="bg-white/60 backdrop-blur-md border border-white/50 p-4 rounded-full text-palette-darkest hover:bg-white hover:shadow-lg transition-all"
+                   aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="mailto:renier1997marquez+portafolio@gmail.com" 
+                   class="bg-white/60 backdrop-blur-md border border-white/50 p-4 rounded-full text-palette-darkest hover:bg-white hover:shadow-lg transition-all"
+                   aria-label="Enviar correo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Script para Datos Dinámicos -->
+    <script>
+        const data = {
+            createdPages: [
+                { title: "El Periódico del Delta", url: "https://periodicodeldelta.com" },
+                { title: "Representaciones Barcan", url: "https://barcan.com" },
+                { title: "SimplySorted", url: "https://simplysortedsoflo.com" },
+                { title: "Diócesis de Cabimas", url: "https://diocesisdecabimas.com" },
+                { title: "Conferencia OFM Cap Hispanoamérica", url: "https://cchcap.org" },
+            ],
+            maintainedPages: [
+                { title: "Conferencia Episcopal Venezolana", url: "https://conferenciaepiscopalvenezolana.com" },
+                { title: "El Delta es Noticia", url: "https://eldeltaesnoticia.com" }
+            ],
+            apps: [
+                { title: "TimeTracker", url: "#" },
+                { title: "Mapeo de Casas de Acogida para Migrantes - Red CLAMOR", url: "https://www.mapeo-red-clamor.website" },
+                { title: "Alianza Salud", url: "https://play.google.com/store/apps/details?id=com.alianzasalud.com&hl=es&pli=1" }
+            ],
+            blogPosts: [
+                { title: "El futuro del diseño web en 2026", url: "#" },
+                { title: "Mis 5 herramientas clave", url: "#" }
+            ]
+        };
+
+        // Renderizadores actualizados para encajar con el glassmorfismo
+        
+        const renderLightLinks = (containerId, items) => {
+            const container = document.getElementById(containerId);
+            items.forEach(item => {
+                const a = document.createElement('a');
+                a.href = item.url;
+                a.target = "_blank";
+                // Enlaces con fondo semi-transparente blanco
+                a.className = "group flex items-center justify-between p-3 rounded-xl bg-white/50 backdrop-blur-sm border border-white/40 hover:bg-white/80 hover:shadow-md transition-all text-palette-darkest font-medium text-sm";
+                
+                a.innerHTML = `
+                    <span class="truncate pr-2">${item.title}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                `;
+                container.appendChild(a);
+            });
+        };
+
+        const renderDarkLinks = (containerId, items) => {
+            const container = document.getElementById(containerId);
+            items.forEach(item => {
+                const a = document.createElement('a');
+                a.href = item.url;
+                a.target = "_blank";
+                // Enlaces en el panel de Apps, ligeramente más oscuros pero translúcidos
+                a.className = "group flex items-center justify-between p-3 rounded-xl bg-palette-white/60 backdrop-blur-sm hover:bg-white/90 border border-white/50 hover:shadow-md transition-all text-palette-darkest font-medium text-sm";
+                
+                a.innerHTML = `
+                    <span class="truncate pr-2">${item.title}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                    </svg>
+                `;
+                container.appendChild(a);
+            });
+        };
+
+        const renderBlogLinks = (containerId, items) => {
+            const container = document.getElementById(containerId);
+            
+            items.forEach(item => {
+                const a = document.createElement('a');
+                a.href = item.url;
+                a.className = "group block p-3 rounded-xl bg-white/40 backdrop-blur-sm hover:bg-white/70 border border-white/30 hover:border-white/60 transition-all text-palette-darkest";
+                
+                a.innerHTML = `
+                    <p class="font-medium text-sm mb-1 group-hover:text-palette-darkest transition-colors line-clamp-2">${item.title}</p>
+                    <span class="text-xs text-palette-darkest/70 flex items-center gap-1 group-hover:text-palette-darkest transition-colors">
+                        Leer artículo <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </span>
+                `;
+                container.appendChild(a);
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderLightLinks('created-pages', data.createdPages);
+            renderLightLinks('maintained-pages', data.maintainedPages);
+            renderDarkLinks('apps-list', data.apps);
+            renderBlogLinks('blog-list', data.blogPosts);
+        });
+    </script>
+</body>
+</html>
