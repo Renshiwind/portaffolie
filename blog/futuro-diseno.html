@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El futuro del diseño web en 2026 | Reni.dev</title>
+    <!-- Tailwind CSS por CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración de Tailwind con la paleta de colores
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        palette: {
+                            darkest: '#5C5C52',
+                            dark: '#8B8B7A',
+                            medium: '#A8A898',
+                            light: '#C4C4B8',
+                            lightest: '#E0E0D4',
+                            white: '#FBFBF9',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Stack Sans Text"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        notch: ['"Stack Sans Notch"', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap');
+
+        html { scroll-behavior: smooth; }
+        
+        /* Animación sutil para el fondo, idéntica al inicio */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .bg-animated-gradient {
+            background: linear-gradient(-45deg, #E0E0D4, #C4C4B8, #A8A898, #E0E0D4);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        /* Estilos base para el contenido del artículo generado dinámicamente o por CMS */
+        .prose p { margin-bottom: 1.5em; line-height: 1.8; color: #5C5C52; opacity: 0.9; }
+        .prose h2 { font-family: "Stack Sans Notch", sans-serif; font-size: 1.75rem; font-weight: 700; margin-top: 2em; margin-bottom: 0.75em; color: #5C5C52; }
+        .prose h3 { font-family: "Stack Sans Notch", sans-serif; font-size: 1.35rem; font-weight: 600; margin-top: 1.5em; margin-bottom: 0.5em; color: #5C5C52; }
+        .prose ul { list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; color: #5C5C52; opacity: 0.9; line-height: 1.8;}
+        .prose ul li { margin-bottom: 0.5em; }
+        .prose blockquote { border-left: 4px solid #8B8B7A; padding-left: 1em; font-style: italic; color: #5C5C52; opacity: 0.8; margin-top: 2em; margin-bottom: 2em; background: rgba(251, 251, 249, 0.3); padding: 1.5rem; border-radius: 0 1rem 1rem 0; }
+        .prose strong { color: #5C5C52; font-weight: 700; }
+    </style>
+</head>
+<body class="bg-animated-gradient text-palette-darkest min-h-screen flex flex-col p-4 md:p-8 selection:bg-palette-medium selection:text-white relative overflow-x-hidden">
+
+    <!-- Formas decorativas desenfocadas de fondo (Glassmorfismo) -->
+    <div class="fixed top-[-10%] left-[-10%] w-96 h-96 bg-palette-white rounded-full mix-blend-overlay filter blur-[100px] opacity-70 pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[30rem] h-[30rem] bg-palette-dark rounded-full mix-blend-overlay filter blur-[120px] opacity-40 pointer-events-none z-0"></div>
+
+    <!-- Contenedor de navegación superior -->
+    <nav class="max-w-3xl w-full mx-auto mb-6 relative z-10">
+        <a href="index.html" class="inline-flex items-center gap-2 bg-white/40 backdrop-blur-md border border-white/50 px-4 py-2 rounded-full text-sm font-medium text-palette-darkest hover:bg-white/70 hover:shadow-md transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            Volver al inicio
+        </a>
+    </nav>
+
+    <!-- Contenedor Principal (Tarjeta de Cristal de Lectura) -->
+    <main class="max-w-3xl w-full mx-auto bg-white/40 backdrop-blur-xl border border-white/60 rounded-[2.5rem] p-6 md:p-12 lg:p-16 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] relative z-10 mb-12">
+        
+        <article>
+            <!-- Cabecera del Artículo -->
+            <header class="mb-10 text-center">
+                <div class="inline-flex gap-2 items-center mb-6">
+                    <span class="bg-palette-medium/20 text-palette-darkest px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-white/40">
+                        Diseño UI/UX
+                    </span>
+                    <span class="bg-palette-medium/20 text-palette-darkest px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-white/40">
+                        Desarrollo
+                    </span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight font-notch text-palette-darkest leading-tight">
+                    El futuro del diseño web en 2026: Minimalismo y Cristal
+                </h1>
+                
+                <div class="flex items-center justify-center gap-4 text-sm text-palette-darkest/80 font-medium">
+                    <div class="flex items-center gap-2">
+                        <img src="./images/Y.jpeg" alt="Reni" class="w-8 h-8 rounded-full object-cover border-2 border-white/60">
+                        <span>Por Reni.dev</span>
+                    </div>
+                    <span class="w-1 h-1 rounded-full bg-palette-dark"></span>
+                    <time datetime="2026-05-27">27 de Mayo, 2026</time>
+                    <span class="w-1 h-1 rounded-full bg-palette-dark hidden sm:block"></span>
+                    <span class="hidden sm:inline-flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        5 min de lectura
+                    </span>
+                </div>
+            </header>
+
+            <!-- Imagen Destacada -->
+            <figure class="mb-12">
+                <!-- Se usa un div envolvente para darle un marco de cristal a la imagen -->
+                <div class="p-2 bg-white/30 backdrop-blur-md border border-white/50 rounded-[2rem] shadow-sm">
+                    <img src="https://www.espacios.media/wp-content/uploads/2021/10/2017-10-17-17.02.36-1024x594.jpg"  class="w-full h-[300px] md:h-[450px] object-cover rounded-[1.5rem] shadow-inner">
+                </div>
+            </figure>
+
+            <!-- Cuerpo del Artículo -->
+            <div class="prose text-lg">
+                <p class="text-xl md:text-2xl font-light font-notch leading-relaxed text-palette-darkest mb-8 !opacity-100">
+                    La web está evolucionando hacia interfaces que no solo son funcionales, sino que se sienten como objetos tangibles en el espacio digital. El glassmorfismo ha dejado de ser una simple tendencia para convertirse en un estándar de elegancia.
+                </p>
+
+                <p>
+                    Hace un par de años, el diseño plano (flat design) dominaba el mundo digital. Era eficiente, cargaba rápido y era fácil de desarrollar. Sin embargo, carecía de profundidad. A medida que las pantallas y los navegadores se volvieron más potentes, los diseñadores y desarrolladores (especialmente los ingenieros fullstack) comenzamos a explorar formas de hacer que las interfaces fueran más "humanas" y acogedoras.
+                </p>
+
+                <h2>El resurgimiento del Glassmorfismo</h2>
+                <p>
+                    El glassmorfismo no es nuevo, pero la forma en que lo aplicamos hoy sí lo es. Ya no se trata de desenfoques pesados que dificultan la lectura, sino de transparencias sutiles combinadas con paletas de colores tierra, grises cálidos y blancos rotos. Esto crea un efecto de "cristal esmerilado" que añade jerarquía sin saturar.
+                </p>
+
+                <blockquote>
+                    "El buen diseño no es el que se ve más espectacular, sino el que te hace sentir más cómodo mientras navegas. El cristal en la web logra exactamente eso: profundidad sin ruido."
+                </blockquote>
+
+                <h3>3 pilares técnicos para lograr este efecto</h3>
+                <p>
+                    Para implementar esto en proyectos reales, como plataformas de e-commerce o sistemas CRM, me baso en tres principios fundamentales usando tecnologías modernas como CSS Grid y Tailwind:
+                </p>
+                <ul>
+                    <li><strong>Transparencia y Desenfoque:</strong> El uso balanceado de <code>backdrop-blur</code> junto con fondos semi-transparentes (ej. <code>bg-white/40</code>).</li>
+                    <li><strong>Bordes de luz:</strong> Un borde sólido pero translúcido (<code>border-white/60</code>) es esencial para definir los bordes del "cristal" simulando el reflejo de la luz.</li>
+                    <li><strong>Fondos dinámicos o complejos:</strong> El cristal no luce si lo que hay detrás es un color plano. Es necesario un gradiente sutil o formas geométricas desenfocadas debajo de las capas principales.</li>
+                </ul>
+
+                <h2>¿Hacia dónde vamos?</h2>
+                <p>
+                    Mientras sigo explorando herramientas como Flutter y manteniendo sistemas robustos en Laravel y Flask, me doy cuenta de que la brecha entre la lógica pura (backend) y la experiencia sensorial (frontend) es cada vez más estrecha. Los usuarios esperan sistemas automatizados que no solo resuelvan sus problemas, sino que sean un placer visual.
+                </p>
+                <p>
+                    Integrar estas técnicas en los portafolios y aplicaciones del día a día es lo que nos diferencia y aporta un valor incalculable a los productos digitales que construimos.
+                </p>
+            </div>
+            
+            <hr class="my-10 border-white/40">
+
+            <!-- Pie del artículo (Autor y Compartir) -->
+            <footer class="flex flex-col md:flex-row items-center justify-between gap-6 bg-white/30 backdrop-blur-md border border-white/50 p-6 rounded-[1.5rem]">
+                <!-- Autor -->
+                <div class="flex items-center gap-4">
+                    <img src="https://cataas.com/cat" alt="Reni.dev" class="w-14 h-14 rounded-full object-cover border-2 border-white">
+                    <div>
+                        <h4 class="font-bold text-palette-darkest font-notch">Reni.dev</h4>
+                        <p class="text-sm text-palette-darkest/80">Ingeniero Informático y Desarrollador Fullstack. Apasionado por el UI/UX y los sistemas escalables.</p>
+                    </div>
+                </div>
+                
+                <!-- Compartir -->
+                <div class="flex gap-3 shrink-0">
+
+                    <button class="bg-white/60 hover:bg-white border border-white/50 p-3 rounded-full text-palette-darkest transition-all shadow-sm" aria-label="Copiar Enlace">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    </button>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+</body>
+</html>
