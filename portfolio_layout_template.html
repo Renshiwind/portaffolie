@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Renidev.online</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-canvas: #eef2f6;
+            --card-bg: #ffffff;
+            --primary-dark: #1e1b4b;
+            --accent-purple: #4c1d95;
+            --accent-pink: #ec4899;
+            --accent-soft: #f43f5e;
+            --text-main: #334155;
+            --text-muted: #64748b;
+        }
+
+        body {
+            background-image: url('unsplash.jpg');
+            background-color: gainsboro;
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+        }
+
+        .portfolio-container {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        /* Card Styles */
+        .custom-card {
+            background-color: var(--card-bg);
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        /* Hero Banner Section */
+        .hero-banner {
+            position: relative;
+            background-color: #f8fafc;
+            min-height: 380px;
+        }
+
+        .hero-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+        }
+
+        .hero-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 0 28px 28px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-img-wrapper img {
+                border-radius: 0 28px 28px 0;
+            }
+        }
+
+        .portfolio-title-main {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 0.9;
+            color: var(--primary-dark);
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .portfolio-subtitle {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+        }
+
+        .handwriting-accent {
+            font-family: 'Caveat', cursive;
+            font-size: 1.6rem;
+            color: var(--accent-pink);
+        }
+
+        /* Section Title */
+        .section-heading {
+            font-family: 'Caveat', cursive;
+            font-size: 2.2rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .author-name-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1.1;
+        }
+
+        /* Profile Avatar */
+        .profile-avatar {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Software Icons Grid */
+        .software-tile {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.1rem;
+            transition: transform .2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+            img{
+                width: 52px;
+                height: 52px;
+            }
+
+         
+        }
+
+        .software-tile:hover{
+                transform: scale(1.1, 1.1);
+
+            }
+
+ 
+
+        /* Skill Progress Bars */
+        .skill-item {
+            margin-bottom: 10px;
+        }
+        .skill-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            color: #475569;
+        }
+        .progress {
+            height: 8px;
+            border-radius: 10px;
+            background-color: #e2e8f0;
+        }
+
+        /* Bullet List Styling */
+        .skills-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .skills-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 4px;
+            font-size: 0.92rem;
+            color: #475569;
+            font-weight: 500;
+        }
+        .skills-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Decorative Arrow Accent */
+        .doodle-arrow {
+            display: inline-block;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            color: #ec4899;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container portfolio-container">
+
+        <div class="custom-card hero-banner">
+            <div class="row g-0 align-items-stretch">
+                <div class="col-md-6 p-4 p-md-5 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="fw-semibold text-dark fs-6 d-block mb-3">Renier Márquez</span>
+                        <div class="mt-2">
+                            <h1 class="portfolio-title-main m-0">PORTA<br>FOLIO</h1>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end mt-4">
+                        <span class="portfolio-subtitle">Programador Senior</span>
+                        <span class="fw-bold fs-5 text-dark">2026</span>
+                    </div>
+                </div>
+
+ 
+                <div class="col-md-6">
+                    <div class="hero-img-wrapper">
+                      
+                        <img src="renier_icono_dev.jpg" alt="Portfolio Cover Art" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="custom-card p-4 p-md-5">
+
+            <div class="mb-4">
+                <h2 class="section-heading m-0">About Me!</h2>
+            </div>
+
+            <div class="row g-4 align-items-start">
+                
+         
+                <div class="col-lg-6 col-md-12 pe-lg-4">
+                    
+              
+                    <div class="position-relative mb-3">
+                        <h3 class="author-name-title mb-1">
+                            RENIER<br>MÁRQUEZ
+                        </h3>
+                        <div class="text-muted small fw-bold">A.K.A Reni</div>
+                 
+                        <span class="doodle-arrow position-absolute top-0 start-50 translate-middle-x ms-4">
+                            <i class="bi bi-arrow-90deg-right"></i>
+                        </span>
+                    </div>
+
+                
+                    <div class="mb-4">
+                        <p class="small text-secondary leading-relaxed">
+                            <span class="fw-bold text-dark fs-6">Hey!</span> Soy un desarrollador apasionado por la experiencia de usuario, sistemas mantenibles y escalables, el código limpio y el café en las mañanas.
+                        </p>
+                    </div>
+
+       
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="handwriting-accent me-1"><i class="bi bi-curl"></i></span>
+                            <h4 class="fw-bold fs-4 m-0 text-dark">Educación</h4>
+                        </div>
+                        <p class="small text-muted mb-0 ps-3">
+                            Ingeniero Informático - 2020 <br> (UTD Francisco Tamayo - Tucupita, Venezuela).
+                        </p>
+                    </div>
+ 
+                    <div>
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <h4 class="fw-bold fs-4 m-0 text-dark">Habilidades</h4>
+                            <span class="handwriting-accent ms-1"><i class="bi bi-check2"></i></span>
+                        </div>
+                        <ul class="skills-list ps-3">
+                            <li>Programación Fullstack</li>
+                            <li>Diseño web</li>
+                            <li>Aplicaciones Móviles</li>
+                            <li>Sistemas de Registro y Control</li>
+                            <li>Experiencia UX/UI</li>
+                            <li>Liderar proyectos</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+      
+                <div class="col-lg-6 col-md-12">
+                    
+                    
+                    <div class="text-center mb-4">
+                        <img src="picture.jpg"  class="profile-avatar mb-3">
+                        
+                   
+                        <div class="d-flex flex-column align-items-center gap-1">
+                            <a href="https://www.linkedin.com/in/renier-márquez-a34210a9/" target="_blank" class="text-decoration-none text-dark small fw-semibold d-flex align-items-center gap-2">
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="mailto:reni1997marquez@gmail.com" class="text-decoration-none text-dark small fw-semibold d-flex align-items-center gap-2">
+                                <i class="bi bi-envelope"></i> Contacto
+                            </a>
+                        </div>
+                    </div>
+
+                 
+                    <div class="mt-4 pt-2">
+                        <h4 class="fw-bold fs-3 mb-3 text-dark">Herramientas</h4>
+
+                        <div class="row align-items-center">
+                            
+                          
+                            <div class="col-5">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <div class="software-tile" title="Laravel">
+                                        <img src="./iconos/laravel.jpg">
+                                    </div>
+                                    <div class="software-tile" title="Flutter">
+                                        <img src="./iconos/flutter.jpg">
+                                    </div>
+                                    <div class="software-tile" title="Angular">
+                                        <img src="./iconos/angular.jpg">
+                                    </div>
+                                    <div class="software-tile" title="Ionic">
+                                        <img src="./iconos/ionic.jpg">
+                                    </div>
+                                    <div class="software-tile" title="Python">
+                                        <img src="./iconos/python.jpg">
+                                    </div>
+                                    <div class="software-tile" title="SQL">
+                                        <img src="./iconos/sql.jpg">
+                                    </div>
+                                    <div class="software-tile" title="PHP">
+                                        <img src="./iconos/php.jpg">
+                                    </div>
+                                    <div class="software-tile" title="Wordpress">
+                                        <img src="./iconos/wordpress.jpg">
+                                    </div>
+
+                                    <small class="text-muted text-info"> (y otros) </small>
+                                </div>
+
+                            </div>
+
+                            
+                            <div class="col-7 ps-2">
+                                
+                                <div class="skill-item">
+                                    <div class="skill-label">Laravel</div>
+                                    <div class="progress" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-danger" style="width: 95%"></div>
+                                    </div>
+                                </div>
+
+                               
+                                <div class="skill-item">
+                                    <div class="skill-label">Flutter</div>
+                                    <div class="progress" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-info" style="width: 65%"></div>
+                                    </div>
+                                </div>
+
+                              
+                                <div class="skill-item">
+                                    <div class="skill-label">Angular</div>
+                                    <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-danger" style="width: 85%"></div>
+                                    </div>
+                                </div>
+
+                               
+                                <div class="skill-item">
+                                    <div class="skill-label">Ionic</div>
+                                    <div class="progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-secondary" style="width: 95%"></div>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="skill-item">
+                                    <div class="skill-label">Python</div>
+                                    <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-success" style="width: 80%"></div>
+                                    </div>
+                                </div>
+
+                                 <div class="skill-item">
+                                    <div class="skill-label">SQL</div>
+                                    <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-warning" style="width: 97%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <div class="skill-label">PHP</div>
+                                    <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-dark" style="width: 97%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <div class="skill-label">Wordpress</div>
+                                    <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-primary" style="width: 97%"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="custom-card p-4 p-md-5">
+
+            <div class="row g-4 align-items-start">
+
+            <div class="col-lg-6 col-md-12 pe-lg-4">
+
+               <div class="position-relative mb-3">
+                <h3 class="author-name-title mb-1">
+                    Portafolio
+                </h3>
+             
+                <span class="doodle-arrow position-absolute top-0 start-50 translate-middle-x ms-4">
+                    <i class="bi bi-briefcase"></i>
+                </span>
+                </div>
+
+                  <div class="mb-6">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="handwriting-accent me-1"><i class="bi bi-curl"></i></span>
+                            <h4 class="fw-bold fs-4 m-0 text-dark"><i class="bi bi-globe"></i> Páginas web creadas</h4>
+                        </div>
+
+                        <div id="paginas_creadas">
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="mt-4 pt-2">
+                      <!-- <div class="mb-6"> -->
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="handwriting-accent me-1"><i class="bi bi-curl"></i></span>
+                            <h4 class="fw-bold fs-4 m-0 text-dark"><i class="bi bi-window-fullscreen"></i> Apps</h4>
+                        </div>
+                         <div id="apps"></div>
+                    </div>
+
+
+                      <div class="mt-4 pt-2">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="handwriting-accent me-1"><i class="bi bi-curl"></i></span>
+                            <h4 class="fw-bold fs-4 m-0 text-dark"><i class="bi bi-check2-square"></i> Páginas que brindo soporte</h4>
+                        </div>
+                         <div id="paginas_mantenidas"></div>
+                    </div>
+
+
+                    
+              </div>
+
+
+            <div class="col-lg-6 col-md-12">
+              
+            </div>
+
+          </div>
+
+        </div>
+
+    </div>
+
+<!-- Modal para Apps -->
+    <div class="modal fade" id="appModal" tabindex="-1" aria-labelledby="appModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="appModalLabel">Detalles de la Aplicación</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBodyContent">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+    <script>
+
+      let myModal = null;
+
+function openModal() {
+    const modalElement = document.getElementById('appModal');
+    
+    if (!myModal) {
+        myModal = new bootstrap.Modal(modalElement);
+    }
+    
+    myModal.show();
+}
+
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('no IA');
+
+            const container = document.getElementById('paginas_creadas');
+
+            data.createdPages.forEach(item => {
+                const a = document.createElement('a');
+                a.href = item.url;
+                a.target = "_blank";
+                // a.className = "";
+                //class="small text-muted mb-0 ps-3"
+                
+                a.innerHTML = `
+                    <p class="small text-muted mb-0 ps-3"><i class="bi bi-dot"></i>${item.title}</p>
+                  
+                `;
+                container.appendChild(a);
+            });
+
+
+            const containerApps = document.getElementById('apps');
+
+            data.apps.forEach(item => {
+                const a = document.createElement('a');
+
+                if(item.modal == 1){
+
+                    a.href = "javascript:void(0)";
+                    a.setAttribute('data-bs-toggle', 'modal');
+                    a.setAttribute('data-bs-target', '#appModal');
+                    a.onclick = () => {
+                        document.getElementById('appModalLabel').innerText = item.title;
+                        document.getElementById('modalBodyContent').innerText = item.description || "Información detallada sobre esta aplicación.";
+                    };
+
+
+                //      a.href = '#apps';
+
+                 a.innerHTML = `
+                    <p class="small text-muted mb-0 ps-3" ><i class="bi bi-dot"></i>${item.title}</p>
+                  
+                `;
+
+
+                }else{
+                    a.href = item.url;
+                    a.target = "_blank";
+                    // a.className = "";
+                    //class="small text-muted mb-0 ps-3"
+                    
+                    a.innerHTML = `
+                        <p class="small text-muted mb-0 ps-3"><i class="bi bi-dot"></i>${item.title}</p>
+                      
+                    `;
+                 
+                }
+
+                containerApps.appendChild(a);
+            });
+
+
+            const containerPages2 = document.getElementById('paginas_mantenidas');
+
+
+            data.maintainedPages.forEach(item => {
+                const a = document.createElement('a');
+                a.href = item.url;
+                a.target = "_blank";
+                // a.className = "";
+                //class="small text-muted mb-0 ps-3"
+                
+                a.innerHTML = `
+                    <p class="small text-muted mb-0 ps-3"><i class="bi bi-dot"></i>${item.title}</p>
+                  
+                `;
+                containerPages2.appendChild(a);
+            });
+
+
+
+
+
+
+        
+        });
+
+
+
+        const data = {
+            createdPages: [
+                { title: "El Periódico del Delta", url: "https://periodicodeldelta.com" },
+                { title: "Representaciones Barcan", url: "https://barcan.com" },
+                { title: "SimplySorted", url: "https://simplysortedsoflo.com" },
+                { title: "OFM Capuchinos Venezuela", url: "https://ofmcapve.org" },
+                { title: "Diócesis de Cabimas", url: "https://diocesisdecabimas.com" },
+                { title: "Conferencia OFM Cap Hispanoamérica", url: "https://cchcap.org" },
+            ],
+            maintainedPages: [
+                { title: "Conferencia Episcopal Venezolana", url: "https://conferenciaepiscopalvenezolana.com" },
+                { title: "El Delta es Noticia", url: "https://eldeltaesnoticia.com" }
+            ],
+            apps: [
+                { title: "TimeTracker", url: "#", modal: 1 },
+                { title: "Mapeo de Casas de Acogida para Migrantes - Red CLAMOR", url: "https://www.mapeo-red-clamor.website", modal: 0 },
+                { title: "Alianza Salud", url: "https://play.google.com/store/apps/details?id=com.alianzasalud.com&hl=es&pli=1" , modal: 0 }
+            ]
+        };
+
+    </script>
+
+
+</body>
+
+</html>
